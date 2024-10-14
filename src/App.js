@@ -1,24 +1,41 @@
-import logo from './logo.svg';
+import React from 'react';
+import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
+import Home from './pages/Home';
+import WatchlistPage from './pages/WatchlistPage';
+import ReviewPage from './pages/ReviewPage';
+import AddMovie from './components/AddMovie';
 import './App.css';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div className="App">
+        <header>
+          <nav>
+            <div className="logo">MovieStream</div>
+            <ul>
+              <li><Link to="/">Home</Link></li>
+              <li><Link to="/watchlist">My List</Link></li>
+              <li><Link to="/review">Reviews</Link></li>
+              <li><Link to="/add-movie">Add Movie</Link></li>
+            </ul>
+          </nav>
+        </header>
+
+        <main>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/watchlist" element={<WatchlistPage />} />
+            <Route path="/review" element={<ReviewPage />} />
+            <Route path="/add-movie" element={<AddMovie />} />
+          </Routes>
+        </main>
+
+        <footer>
+          <p>&copy; 2023 MovieStream. All rights reserved.</p>
+        </footer>
+      </div>
+    </Router>
   );
 }
 

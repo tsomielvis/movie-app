@@ -1,0 +1,47 @@
+/* MovieCard.css */
+.movie-card {
+    position: relative;
+    width: 200px;
+    margin: 10px;
+    transition: transform 0.2s ease-in;
+  }
+  
+  .movie-card:hover {
+    transform: scale(1.05);
+  }
+  
+  .movie-poster {
+    width: 100%;
+    height: auto;
+  }
+  
+  .movie-info {
+    background-color: #fff;
+    padding: 10px;
+    text-align: center;
+  }
+  
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+  
+  .movie-card:hover .overlay {
+    opacity: 1;
+  }
+  
+  .watch-trailer-btn, .add-watchlist-btn {
+    background-color: #ff6347;
+    color: white;
+    border: none;
+    padding: 10px;
+    margin: 5px;
+    cursor: pointer;
+  }
+  

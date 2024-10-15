@@ -4,8 +4,10 @@
     position: relative;
     cursor: pointer;
     text-align: center;
-    font-size: 5px;
-    color: #fff;
+    font-size: 10px;
+    color: #ffd000;
+    font-weight: 400;
+    letter-spacing: -0.3px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -16,17 +18,23 @@
 .Poster {
     height: 355px;
     max-width: 100%;
-    border: 0.002px white solid;
+    border: 0.002px rgba(255, 255, 255, 0.208) solid;
     transform: 0.3s;
-    border-radius: 5px;
+    border-radius: 3px;
+    transition: 0.5s ease-in-out;
 }
+
+
 .Main-Card:hover {
     padding-bottom: 0;
 }
+
 .Poster:hover {
+    border: 0.002px rgba(255, 255, 255, 0.616) solid;
+
     position: relative;
-    height: 357px;
-    opacity: 80%;
+    /* height: 357px; */
+    opacity: 75%;
 }
 
 .Movie-Title {
@@ -39,6 +47,7 @@
 .movie-infos {
     padding: 15px 0;
 }
+
 .movie-title {
     margin: 0;
     font-size: large;
@@ -49,32 +58,50 @@
 }
 
 .movie-voting {
+
     position: absolute;
     right: 25px;
     top: 5px;
     background-color: #0f1014;
     border: 1px solid gray;
     padding: 10px;
+    margin-bottom: 5px;
     font-size: 12px;
-    border-radius: 25px;
+    border-radius: 6px;
+}
+.fa2star{
+    padding: 0px;
+    font-size: 12px;
+}
+.addToWishListBtn{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 32px;
+    width:min-content;
+    background-color: rgb(35, 35, 35);
 }
 @media screen and (max-width: 950px) {
     .movie-voting {
         right: 3.5%;
     }
 }
+
 @media screen and (max-width: 560px) {
     .movie-voting {
         right: 20.981%;
     }
+
     .Poster {
         height: 250px;
     }
+
     .Poster:hover {
         position: relative;
         height: 252px;
     }
 }
+
 @media screen and (max-width: 480px) {
     .movie-voting {
         right: 5%;

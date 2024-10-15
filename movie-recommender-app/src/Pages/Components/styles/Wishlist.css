@@ -1,0 +1,31 @@
+.wishListMainContainer{
+    margin: 2em;
+    display: flex;
+    margin-top: 2em;
+
+    /* min-height: 100vh;
+    background-color: black; */
+}
+
+.wishListMainContainer h2{
+    text-align: center;
+    color: aliceblue;
+    text-transform: uppercase;
+   
+
+}
+.container-fluid{
+
+}
+
+.HomeMovies h2{
+
+    color: aliceblue;
+    text-transform: uppercase;
+    padding: 1.5em;
+    text-align: center;
+
+}
+.wishListTitle{
+    color: aliceblue;
+}

@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import "./styles/SearchBarStyles.css";
 
 function SearchBar({ movies, placeholder }) {
+    
     const navigate = useNavigate();
     const [inputValue, setInputValue] = useState("");
     const [filteredMovies, setFilteredMovies] = useState([]);

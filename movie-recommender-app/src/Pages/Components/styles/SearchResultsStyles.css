@@ -13,7 +13,7 @@
     font-family: "Montserrat", sans-serif;
 }
 .casting {
-    transition: width 0.5s, height 0.5s;
+    /* transition: width 0.5s, height 0.5s; */
     text-decoration: none;
 }
 .casting a {
@@ -21,24 +21,36 @@
 }
 
 .casting img {
-    height: 50px;
-    width: 50px;
+    height: fit-content;
+    width:10%;
+    border-radius: 2px;
+    border:2px solid #06060637;
     margin-right: 10px;
     margin-bottom: 35px;
     transition: width 0.5s, height 0.5s;
+
+    transition: 0.5s ease-in-out;
 }
 .topTitle-Movie {
-    font-weight: 700;
-}
-.casting img:hover {
-    height: 80px;
-    width: 80px;
-}
-.main-img {
-    height: 420px;
-    box-shadow: -4px 4px 5px 0 #000;
+    font-weight: 600;
+    letter-spacing: -2px;
+    text-transform: capitalize;
 }
 
+.casting img:hover {
+    transform: translateY(-6px);
+  
+}
+.main-img {
+    height: 400px;
+    border-radius: 5px;
+    border: 2px solid #0f101421;
+    box-shadow: 0px 0px 12px 0 #0303032a;
+    transition: 0.5s ease-in-out;
+}
+.main-img:hover{
+    border: 2px solid #0f1014ac;
+}
 .recommendedMovies {
     width: 100%;
     background-color: #0f1014;
@@ -52,7 +64,7 @@
 }
 
 .trailer-bttn {
-    margin-top: 15px;
+    /* margin-top: 15px; */
     text-decoration: none !important;
     color: #fff !important;
     border-radius: 0.4em;
@@ -70,7 +82,7 @@
     font-size: 5vw;
 }
 
-.youtube-container {
+.youtube-reviewContainer {
     z-index: 99;
     position: absolute;
     left: 0;
@@ -118,6 +130,40 @@
 }
 .DisplayOFF {
     display: none;
+}
+
+.addingBtn , .addedBtn{
+    display: flex;
+    font-size: large;
+    font-family: 'Montserrat';
+    width: 7.3em;
+    height: 35px;
+    /* text-align: center; */
+    align-items: center;
+}
+.copiedBtn , .copyBtn{
+    display: flex;
+    font-size: large;
+    font-family: 'Montserrat';
+    width: fit-content;
+    height: 35px;
+    /* text-align: center; */
+    align-items: center;
+}
+.addingBtn i, .addedBtn i{
+    padding: 0px;
+    font-size: 12px;
+
+}
+
+.shareBtnAndDetail{
+    display: flex;
+}
+.addedBtn{
+    background-color:green;
+}
+.copiedBtn{
+    background-color:green;
 }
 @media screen and (max-width: 1080px) {
     .recommendedGrid {
@@ -171,3 +217,58 @@
         width: 55px;
     }
 }
+
+
+.reviewContainer {
+    
+    color:#fff;
+
+    background-color: #000000df;
+    border-radius: 2px solid #fff;
+    border-radius: 5px;
+    padding-inline: 10em;
+    display: grid;
+    
+    grid-template-columns: 1fr 1fr;
+    gap: 1em;
+    padding-block: 2em;
+
+  }
+  .reviewContainer h3{
+    padding-bottom: 15px;
+  }
+
+  .indiReview{
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    border:1px solid #ffffff79;
+    border-radius: 5px;
+  }
+  /* Clear floats after containers */
+  .reviewContainer::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+  
+ 
+  /* Increase the font-size of a span element */
+  .reviewContainer span {
+    font-size: 18px;
+    font-weight: 400;
+    margin-right: 15px;
+  }
+  
+  /* Add media queries for responsiveness. This will center both the text and the image inside the reviewContainer */
+  @media (max-width: 500px) {
+    .reviewContainer {
+      text-align: center;
+    }
+  
+    .reviewContainer img {
+      margin: auto;
+      float: none;
+      display: block;
+    }
+  }

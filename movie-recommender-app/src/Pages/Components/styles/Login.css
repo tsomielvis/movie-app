@@ -1,0 +1,161 @@
+/* body .loginPage{
+    background-color: #4e54c8;
+    color: #000000;
+    font-size: 14px;
+    font-size: .875rem;
+    font-weight: 400;
+    height: 100%;
+    line-height: 1.5;
+    margin: 0;
+    max-height: 100vh;
+    color: #fff;
+
+} */
+body {
+	background: linear-gradient(-45deg, #f44e1c, #f54186, #22b0e3, #36f4c7);
+	background-size: 400% 400%;
+	animation: gradient 15s ease infinite;
+	height: 100vh;
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+.loginPage{
+  
+
+    display: flex;
+    /* background-color: #4e54c8; */
+    /* flex-direction: column;
+    align-items: center; */
+    height: 100%;
+
+    padding-top: 5em;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    text-align: center;
+}
+.btnsBar1{
+    display: flex;
+    flex-direction: column;
+
+}
+.btnsBar{
+    display: flex;
+    flex-direction: row;
+    gap: 1em;
+}
+.signUp{
+    padding-top: 10px;
+}
+.loginButtonText{
+    padding-top: 10px;
+}
+.imageLogo{
+    
+    padding-bottom:8em;
+}
+
+a{
+    color:#ea4c88;
+}
+input {
+    background-image: none;
+    border: 0;
+
+    margin: 0;
+    outline: 0;
+    padding: 0;
+    -webkit-transition: background-color .3s;
+    transition: background-color .3s
+}
+
+input[type=submit] {
+    cursor: pointer
+}
+
+.form input[type=password],
+.form input[type=text],
+.form input[type=submit] {
+    width: 100%
+}
+.form{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    margin: 14px;
+    margin: .875rem
+}
+
+.form{
+    -webkit-box-flex: 1;
+    -ms-flex: 1;
+    flex: 1
+}
+/* .form input{
+    margin-block: 1em;
+
+} */
+.form {
+    color: #eee
+}
+
+
+.form input[type=text],
+.form input[type=password],
+.form input[type=submit] {
+    border-radius: .25rem;
+    padding: 16px;
+    padding: .85rem
+}
+
+button {
+    border-radius: 5px;
+    background-color: #004497;
+}
+
+.form input[type=password],
+.form input[type=text] {
+    width: 22em;
+    background-color: rgb(44, 44, 44);
+
+}
+
+.form input[type=password]:focus,
+.form input[type=password]:hover,
+.form input[type=text]:focus,
+.form input[type=text]:hover {
+    background-color: #cdcdcd
+}
+
+.form input[type=submit] {
+    background-color: #000000;
+    color: #eee;
+    font-weight: 700;
+    text-transform: uppercase
+}
+
+button [type=submit]:focus,
+button [type=submit]:hover {
+    background-color: #000000
+}

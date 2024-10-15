@@ -6,6 +6,7 @@ from sklearn.metrics.pairwise import cosine_similarity
 from flask import Flask, request, render_template, jsonify
 
 
+       
 def createSimilarity():
     data = pd.read_csv('main_data.csv') # reading the dataset
     cv = CountVectorizer()
@@ -39,8 +40,9 @@ def Recommend(movie):
         return movieList
 
 
-app = Flask(__name__, static_folder='movie-recommender-app/build',
+app = Flask(__name__, static_folder = 'movie-recommender-app/build',
             static_url_path='/')
+
 CORS(app)
 
 @app.route('/api/movies', methods=['GET'])

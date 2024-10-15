@@ -44,22 +44,3 @@
      
    
 
-
----
-## Architecture :page_facing_up:
-
-
-![image](https://user-images.githubusercontent.com/74367889/170507933-fabe5dcc-52a0-476f-8650-c454a433bc48.png)
-
----
-## Algorithm For Recommendation
-The Recommendations are made by computing similarity scores for movies using consine simarity. For each movie tags are created by combining various details like genre of the movie, title, top cast, director and then they are converted to vectors using which similarity matrix is formed. Then for any searched movie the movies with the largest similarity score with it are sorted and then recommended.
-### Cosine Similarity 
-![image](https://user-images.githubusercontent.com/74367889/170820479-843243b2-3659-4101-8adf-2e5c7cdbcc19.png)
-
-
-
- ---
- ## References 
- 1. TMDB's API : https://www.themoviedb.org/documentation/api
- 2. Cosine Similarity : https://www.machinelearningplus.com/nlp/cosine-similarity/

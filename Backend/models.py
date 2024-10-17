@@ -36,14 +36,14 @@ class Review(db.Model):
     def __repr__(self):
         return f'<Review {self.id} by User {self.user_id} for Movie {self.movie_id}>'
 
-# Define the Watchlist model (example)
-class Watchlist(db.Model):
+# Define the Wishlist model (example)
+class Wishlist(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
     movie_id = db.Column(db.Integer, db.ForeignKey('movie.id'), nullable=False)
 
-    user = db.relationship('User', backref='watchlists')
-    movie = db.relationship('Movie', backref='watchlists')
+    user = db.relationship('User', backref='wishlists')
+    movie = db.relationship('Movie', backref='wishlists')
 
     def __repr__(self):
         return f'<Watchlist {self.id} for User {self.user_id} Movie {self.movie_id}>'

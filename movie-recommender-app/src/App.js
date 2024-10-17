@@ -2,7 +2,7 @@ import "./App.css";
 import React, { useState } from "react";
 
 import Login from "./Pages/Login";
-import Wishlist from "./Pages/Components/Wishlist";
+import Watchlist from "./Pages/Components/Watchlist";
 import Home from "./Pages/Home";
 import SearchResult from "./Pages/SearchResult";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
@@ -23,7 +23,7 @@ function App() {
           <Route exact path="/" element={<Login setIsLoggedIn={setIsLoggedIn} />} />
           <Route exact path="/home" element={<Home />} />
           <Route exact path="/search/:id" element={<SearchResult />} />
-          <Route exact path="/wishlist" element={<Wishlist />} />
+          <Route exact path="/Watchlist" element={<Watchlist />} />
         </Routes>
       </Router>
     </div>

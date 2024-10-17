@@ -3,11 +3,11 @@
 ![Python](https://img.shields.io/badge/Python-3.9.6-blueviolet)     ![Framework](https://img.shields.io/badge/Framework-Flask-red) ![Frontend](https://img.shields.io/badge/Frontend-React-green) ![API](https://img.shields.io/badge/API-TMDB-fcba03)
 
 ## Overview  📋
-- The web app is built using React.js for the front-end and python's flask for the back-end.
-- It enable user to search and go through various details (like mood, cast, genre, trailer, etc) 5000+ movies (these details are fetched using an API by TMDB also provided through the Dataset) .
-- Based on the mood of the user, movies are recommended. The movies are fetched from the python-flask backend that uses local dataset and content-based filtering algorithm(Cosine-Similarity) for recommendating movies using Machine Learning.
-- The web-app also allows user to get top movies filtered by genre (these are fetched using an TMDB api) . 
-- The web app is responsive and can be used on mobile devies.  
+- The web app uses React.js for the front end and Python's Flask for the back end.
+- It enables users to search and go through various details (like mood, cast, genre, trailer, etc) of 5000+ movies (these details are fetched using an API by TMDB also provided through the Dataset).
+- Based on the mood of the user, movies are recommended. The movies are fetched from the python-flask backend that uses a local dataset and content-based filtering algorithm(Cosine-Similarity) to recommend movies using Machine Learning.
+- The web app also allows users to filter top movies by genre (these are fetched using a TMDB Api). 
+- The web app is responsive and can be used on mobile devices.  
 
 ![Maintenance](https://img.shields.io/badge/maintained-yes-green.svg) ![Website shields.io](https://img.shields.io/badge/website-up-yellow)
 
@@ -17,11 +17,11 @@
 ## Installation 📦
 1. Clone or download this repository to your local machine.
 2.  Install all the libraries mentioned in the [requirements.txt] 
-    ```shell
+    ``` shell
     $ pip install -r requirements.txt
     ```
  3. Then run the flask server by 
-    ```shell
+    ``` shell
     $ python app.py
     ```
 4. Go to the movie-recommender-app directory and install the node modules and build the project.

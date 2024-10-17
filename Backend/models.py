@@ -1,53 +1,49 @@
-from sqlalchemy import create_engine, Column, Integer, String, ForeignKey, DateTime
-from sqlalchemy.orm import relationship, declarative_base
-import datetime
+from flask_sqlalchemy import SQLAlchemy
 
-Base = declarative_base()
+# Initialize the database
+db = SQLAlchemy()
 
-class User(Base):
-    __tablename__ = 'users'
-    
-    user_id = Column(Integer, primary_key=True)
-    username = Column(String)
-    email = Column(String, unique=True)
-    password = Column(String, unique=True)
+# Define the User model
+class User(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    username = db.Column(db.String(80), unique=True, nullable=False)
+    password = db.Column(db.String(200), nullable=False)
 
-    reviews = relationship('Review', back_populates='user')
-    watchlist = relationship('Watchlist', back_populates='user', uselist=False)
+    def __repr__(self):
+        return f'<User {self.username}>'
 
-class Movie(Base):
-    __tablename__ = 'movies'
-    
-    movie_id = Column(Integer, primary_key=True)
-    title = Column(String)
-    release_year = Column(Integer)
-    genre = Column(String)
-    synopsis = Column(String)
+# Define the Movie model (example)
+class Movie(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    title = db.Column(db.String(200), nullable=False)
+    release_year = db.Column(db.Integer, nullable=False)
+    genre = db.Column(db.String(100), nullable=True)
 
-    reviews = relationship('Review', back_populates='movie')
-    watchlists = relationship('Watchlist', back_populates='movie')
+    def __repr__(self):
+        return f'<Movie {self.title}>'
 
-class Review(Base):
-    __tablename__ = 'reviews'
-    
-    review_id = Column(Integer, primary_key=True)
-    content = Column(String)
-    rating = Column(Integer)
-    user_id = Column(Integer, ForeignKey('users.user_id'))
-    movie_id = Column(Integer, ForeignKey('movies.movie_id'))
+# Define the Review model (example)
+class Review(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
+    movie_id = db.Column(db.Integer, db.ForeignKey('movie.id'), nullable=False)
+    rating = db.Column(db.Integer, nullable=False)
+    comment = db.Column(db.Text, nullable=True)
 
-    user = relationship('User', back_populates='reviews')
-    movie = relationship('Movie', back_populates='reviews')
+    user = db.relationship('User', backref='reviews')
+    movie = db.relationship('Movie', backref='reviews')
 
-class Watchlist(Base):
-    __tablename__ = 'watchlist'
-    
-    watchlist_id = Column(Integer, primary_key=True)
-    user_id = Column(Integer, ForeignKey('users.user_id'), unique=True)
-    movie_id = Column(Integer, ForeignKey('movies.movie_id'), unique=True)
-    added_at = Column(DateTime, default=datetime.datetime.utcnow)
+    def __repr__(self):
+        return f'<Review {self.id} by User {self.user_id} for Movie {self.movie_id}>'
 
+# Define the Watchlist model (example)
+class Watchlist(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
+    movie_id = db.Column(db.Integer, db.ForeignKey('movie.id'), nullable=False)
 
-def setup_database():
-    engine = create_engine('sqlite:///database.db')  
-    Base.metadata.create_all(engine)
+    user = db.relationship('User', backref='watchlists')
+    movie = db.relationship('Movie', backref='watchlists')
+
+    def __repr__(self):
+        return f'<Watchlist {self.id} for User {self.user_id} Movie {self.movie_id}>'
